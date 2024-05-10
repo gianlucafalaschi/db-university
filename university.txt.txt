@@ -13,6 +13,11 @@ WHERE `cfu` > 10;
 
  
 3. Selezionare tutti gli studenti che hanno più di 30 anni
+SELECT *
+FROM `students`
+WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) > 30;
+
+oppure
 
 SELECT *
 FROM `students`
@@ -48,6 +53,8 @@ AND `hour` > '14:00:00';
 SELECT *
 FROM `degrees`
 WHERE `name` LIKE '%laurea magistrale%';
+
+correzione: in realta' qui c'era una colonna specifica che specificava se era magistrale, triennale ecc
 
  
 7. Da quanti dipartimenti è composta l'università? (12)
