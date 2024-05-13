@@ -72,7 +72,7 @@ LEFT JOIN `degrees`
 ON `students`.`degree_id` = `degrees`.`id`
 JOIN `departments`
 ON `degrees`.`department_id` = `departments`.`id`
-ORDER BY `students`.`name`, `students`.`surname` ASC;
+ORDER BY `students`.`name`, `students`.`surname` ASC;           (qui in realta' andava messo prima cognome poi il nome)
 
 
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
@@ -95,6 +95,9 @@ JOIN `degrees` ON `degrees`.`id` = `courses`.`degree_id`
 JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
 WHERE `departments`.`name` = 'Dipartimento di Matematica'
 ORDER BY `teachers`.`name`, `teachers`.`surname` ASC;
+
+
+NOTA: qui il DISTINCT era meglio metterlo su `teachers`.`id` perche' come ho fatto io si potrebbero avere docenti con lo stesso nome
 
 
 7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti
